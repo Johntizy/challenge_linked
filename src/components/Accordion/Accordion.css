@@ -1,0 +1,37 @@
+.app_accordion{
+    border-bottom: 1px solid var(--color-accent);
+    width: 100%;
+}
+.app_accordion-title{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    width: 100%;
+    padding-bottom: 13px;
+    margin-top: 38px;
+}
+
+.app_accordion-btn{
+    color: var(--color-accent);
+    font-size: 18px;
+    cursor: pointer;
+} 
+ 
+.app_accordion-question{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;    
+}
+
+.app_accordion-question p{
+    text-align: left;
+}
+
+.app_accordion-content{
+    padding: 5px;
+}
+

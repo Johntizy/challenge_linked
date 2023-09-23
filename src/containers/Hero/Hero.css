@@ -1,0 +1,290 @@
+.app_hero {
+  position: relative;
+  padding: 4rem 6rem 0 6rem;
+  border-bottom: 0.1px solid rgba(255, 255, 255, 0.18);
+}
+
+.app_hero-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-bottom: 40px;
+  z-index: 100;
+}
+
+.app_hero-top p {
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 700;
+  z-index: 1000;
+  margin-bottom: 0;
+}
+
+.app_hero-top span {
+  color: var(--color-white);
+  border-bottom: 20px solid;
+  border-image: url(../../assets/dash.svg) 30 round;
+}
+
+.absolute_star {
+  position: absolute;
+  top: 9%;
+  left: 11%;
+}
+
+.absolute_star2 {
+  position: absolute;
+  top: 15%;
+  right: 41%;
+}
+
+.absolute_star3 {
+  position: absolute;
+  bottom: 35%;
+  right: 0%;
+}
+
+.app_hero-wrapper_info {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 52px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app_hero-wrapper_info p {
+  margin: 8px 0 41px 0;
+  max-width: 522px;
+}
+
+.app_hero-wrapper_info button {
+  margin-bottom: 77px;
+}
+
+.app_hero-wrapper_info .timer {
+  color: var(--color-white);
+  font-family: var(--font-time);
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 85.12px;
+}
+.app_hero-wrapper_info .timer span {
+  color: var(--color-white);
+  font-family: var(--font-base);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18.62px;
+}
+
+.app_hero-wrapper_img {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  background: url("../../assets/metrix.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right -20px bottom;
+  background-blend-mode: luminosity;
+  z-index: 100;
+}
+
+.app_hero-wrapper_img img {
+  width: 100%;
+}
+
+.man_gradient {
+  position: absolute;
+  filter: blur(170px) brightness(130%);
+  top: -30px;
+  right: 1%;
+  border-radius: 50%;
+  z-index: 1;
+  visibility: visible;
+}
+
+.absolute_gradient {
+  position: absolute;
+  filter: blur(115px) brightness(140%);
+  top: -30px;
+  left: 17%;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.head_bulb {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+
+  padding-right: 20%;
+}
+
+.head_bulb img {
+  width: 53px;
+  height: 73px;
+}
+
+@media screen and (max-width: 1700px) {
+  .app_hero-top {
+    margin-bottom: 106px;
+  }
+  .app_hero-wrapper_img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .app_hero {
+    position: relative;
+    padding: 2rem 0 0 0;
+  }
+  .app_hero-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 58px;
+    z-index: 100;
+  }
+
+  .app_hero-top p {
+    font-size: 20px;
+  }
+
+  .app_hero-top svg {
+    width: 115px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .app_hero-wrapper_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .head_bulb img {
+    position: absolute;
+    right: 5%;
+    top: -20px;
+    width: 30px;
+    height: 35px;
+  }
+  .headtext img {
+    width: 61px;
+    height: 61px;
+  }
+  .app_hero-wrapper_info p {
+    font-size: 16px;
+    max-width: 480px;
+    text-align: center;
+  }
+
+  .app_hero-wrapper_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-size: cover;
+    background-position: right 0 top;
+    position: relative;
+    bottom: initial;
+    right: initial;
+  }
+
+  .app_hero-wrapper_img img {
+    width: 100%;
+  }
+  .timer {
+    margin-bottom: 11.7px;
+  }
+
+  .absolute_gradient {
+    position: absolute;
+    filter: blur(115px) brightness(170%);
+    top: 50px;
+    left: 10%;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .absolute_gradient img {
+    width: 200px;
+  }
+
+  .app_hero-top span {
+    color: var(--color-white);
+    border-bottom: 10px solid;
+    border-image: url(../../assets/dash.svg) 30 round;
+  }
+
+  .absolute_star {
+    position: absolute;
+    top: 7%;
+    left: 15%;
+  }
+
+  .absolute_star2 {
+    position: absolute;
+    top: 7.5%;
+    right: 15%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .app_hero svg {
+    width: 115px;
+  }
+
+  .app_hero-wrapper_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .head_bulb img {
+    position: absolute;
+    right: 5%;
+    top: -20px;
+    width: 18px;
+    height: 26px;
+  }
+  .headtext img {
+    width: 32.797px;
+    height: 32.797px;
+  }
+  .app_hero-wrapper_info p {
+    font-size: 13px;
+    max-width: 264px;
+  }
+
+  .app_hero-wrapper_img img {
+    width: 100%;
+  }
+  .timer {
+    margin-bottom: 11.7px;
+  }
+
+  .absolute_gradient {
+    position: absolute;
+    filter: blur(115px) brightness(170%);
+    top: 50px;
+    left: 10%;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .absolute_gradient img {
+    width: 200px;
+  }
+}

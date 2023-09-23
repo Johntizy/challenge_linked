@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&family=Unica+One&display=swap');
+
+@font-face {
+  font-family: 'ClashDisplay';
+  src:  local('ClashDisplay'), url('./assets/fonts/ClashDisplay-Bold.woff') format('woff')
+}
+
+
+:root {
+  --font-base: 'Montserrat', sans-serif;
+  --font-nav: 'Inter', sans-serif;
+  --font-time: 'Unica One', cursive;
+  --font-primary: ClashDisplay;
+
+
+  --gradient-text:linear-gradient(45deg, #AE67FA 1.84%, #F49867 102.67%);
+
+  --gradient-bar: linear-gradient(270deg, #903AFF 0%, #FE34B9 100%);
+  
+  --color-bg: #150E28;
+  --color-secondary: #903AFF;
+  --color-accent: #D434FE;
+  --color-white: #FFFFFF;
+}
