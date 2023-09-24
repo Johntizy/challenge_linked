@@ -33,12 +33,12 @@ function Register() {
   };
 
   const [formData, setFormData] = useState({
-    team_name: "",
     email: "",
     phone_number: "",
+    team_name: "",
+    group_size: "",
     project_topic: "",
     category: "",
-    group_size: "",
     privacy_poclicy_accepted: false,
   });
 
@@ -112,7 +112,11 @@ function Register() {
       setShowmodal(true);
     },
     onError(e) {
-      toast.error("Something Went Wrong!");
+      toast.error(
+        <p className="p_montserrat-14" style={{ color: "red" }}>
+          Something went wrong. Try Again!
+        </p>
+      );
     },
   });
 
@@ -121,10 +125,13 @@ function Register() {
     let isValid = validateForm();
 
     if (isValid) {
-      toast(formData.category);
       mutate(formData);
     } else {
-      toast("In-Valid Form");
+      toast.error(
+        <p className="p_montserrat-14" style={{ color: "red" }}>
+          Fields required
+        </p>
+      );
     }
     console.log(isValid);
   };

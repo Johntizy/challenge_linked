@@ -30,7 +30,11 @@ function Contact() {
       setShowmodal(true);
     },
     onError(e) {
-      toast.error("Something Went Wrong!");
+      toast.error(
+        <p className="p_montserrat-14" style={{ color: "red" }}>
+          Something went wrong. Try Again!
+        </p>
+      );
     },
   });
 
@@ -77,7 +81,11 @@ function Contact() {
     if (isValid) {
       mutate(formData);
     } else {
-      toast("In-Valid Form");
+      toast.error(
+        <p className="p_montserrat-14" style={{ color: "red" }}>
+          Fields required
+        </p>
+      );
     }
     console.log(isValid);
   };
