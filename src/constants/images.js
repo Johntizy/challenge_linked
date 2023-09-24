@@ -35,6 +35,7 @@ export default {
     modalsuc,
     star,
     prestar,
+    secure,
     lens,
     man,
     fire,
