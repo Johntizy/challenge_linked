@@ -1,21 +1,28 @@
 import { useState, useCallback, useEffect } from "react";
+import axios from "axios";
+import { useMutation } from "react-query";
+import toast from "react-hot-toast";
+import { Slide } from "react-awesome-reveal";
+
 
 //assets
 import photo from "../../assets/reg-image.png";
-import Button from "../../components/Button";
-import Modal from "../../components/Modal";
-//style
-import "./RegisterPage.css";
-import Input from "../../components/input/Input";
-import axios from "axios";
+
+//component
+import Modal from "../../components/Modal/Modal";
 import { data } from "../../constants";
-import { Slide } from "react-awesome-reveal";
-import { useMutation } from "react-query";
-import toast from "react-hot-toast";
-import {images} from "../../constants";
+import Input from "../../components/input/Input";
+import { images } from "../../constants";
+import { Selection } from "../../components/Selection/Selection";
+
+
+//style
+import "./Register.css";
 
 function Register() {
   const [selectOptions, setSelectOptions] = useState([]);
+  const [categoryPick, setCategoryPick] = useState(null);
+  const [groupSize, setGroupSize] = useState(null);
   const [showModal, setShowmodal] = useState(false);
 
   useEffect(() => {
@@ -24,11 +31,15 @@ function Register() {
   }, []);
 
   const getData = async () => {
+    const arr = [];
     await axios
       .get("https://backend.getlinked.ai/hackathon/categories-list")
       .then((res) => {
-        console.log(res.data);
-        setSelectOptions(res.data);
+        let result = res.data;
+        result.map((user) => {
+          return arr.push({ value: user.name, label: user.name });
+        });
+        setSelectOptions(arr);
       })
       .catch((err) => console.log(err));
   };
@@ -56,12 +67,13 @@ function Register() {
   const [formError, setFormError] = useState({});
 
   const onChangeHandler = (event) => {
-    console.log(event.target.value);
-    console.log(event.target.checked);
+    console.log(formData);
     if (event.target.name === "privacy_poclicy_accepted") {
       setFormData(() => ({
         ...formData,
         [event.target.name]: event.target.checked,
+        category: categoryPick.value,
+        group_size: groupSize.value,
       }));
     } else {
       setFormData(() => ({
@@ -123,7 +135,7 @@ function Register() {
     let isValid = validateForm();
 
     if (isValid) {
-      mutate(formData)
+      toast(formData);
     } else {
       toast("In-Valid Form");
     }
@@ -141,7 +153,9 @@ function Register() {
           </Slide>
 
           <Slide direction="up" delay={300}>
-            <p className="p_montserrat-14">Be part of this movement!</p>
+            <p className="p_montserrat-14" style={{ textAlign: "left" }}>
+              Be part of this movement!
+            </p>
           </Slide>
 
           <h2>CREATE YOUR ACCOUNT</h2>
@@ -215,11 +229,11 @@ function Register() {
             </div>
           </div>
 
-          <div className="app_register-form-input">
+          <div className="app_register-form-select">
             <div className="app_register-form-input-container">
               <label className="p_montserrat-14">Category</label>
               <Slide direction="up" delay={300}>
-                <select
+                {/* <select
                   className="form-select"
                   name="category"
                   onChange={onChangeHandler}
@@ -231,7 +245,14 @@ function Register() {
                       {opt.name}
                     </option>
                   ))}
-                </select>
+                </select> */}
+
+                <Selection
+                  value={categoryPick}
+                  selectOptions={selectOptions}
+                  placeholder="Category"
+                  handleChange={setCategoryPick}
+                />
               </Slide>
               <span className="non-valid">{formError.occupation}</span>
             </div>
@@ -239,7 +260,7 @@ function Register() {
             <div className="app_register-form-input-container">
               <label className="p_montserrat-14">Group Size</label>
               <Slide direction="up" delay={300}>
-                <select
+                {/* <select
                   className="form-select"
                   name="group_size"
                   onChange={onChangeHandler}
@@ -251,7 +272,13 @@ function Register() {
                       {opt.value}
                     </option>
                   ))}
-                </select>
+                </select> */}
+                <Selection
+                  value={groupSize}
+                  selectOptions={data.groupSize}
+                  placeholder="Group Size"
+                  handleChange={setGroupSize}
+                />
               </Slide>
               <span className="non-valid">{formError.occupation}</span>
             </div>
@@ -273,19 +300,40 @@ function Register() {
           </div>
 
           <Slide direction="up" delay={500}>
-            <Button className="app_register-form-btn">Register Now</Button>
+            <button className="app_register-form-btn">Register Now</button>
           </Slide>
-          
         </form>
       </div>
 
       {showModal && <Modal />}
 
-      
-      <img src={images.starpu} alt="gradient-top" className="absolute_star_top stars" />
-      <img src={images.satagra} alt="gradient-top" className="absolute_star_middle stars" />
-      <img src={images.prestar} alt="gradient-top" className="absolute_star_right stars" />
-      <img src={images.prestar} alt="gradient-top" className="absolute_star_bottom stars" />
+      <div className="gradient_circle_section-top ">
+        <img src={images.lens} alt="gradient-top" />
+      </div>
+      <div className="gradient_circle_section-bottom_right ">
+        <img src={images.lens} alt="gradient-top" />
+      </div>
+
+      <img
+        src={images.starpu}
+        alt="gradient-top"
+        className="absolute_star_top stars"
+      />
+      <img
+        src={images.satagra}
+        alt="gradient-top"
+        className="absolute_star_middle stars"
+      />
+      <img
+        src={images.prestar}
+        alt="gradient-top"
+        className="absolute_star_right stars"
+      />
+      <img
+        src={images.prestar}
+        alt="gradient-top"
+        className="absolute_star_bottom stars"
+      />
     </div>
   );
 }

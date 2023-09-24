@@ -283,24 +283,6 @@ span {
   animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-@keyframes stars {
-  0% {
-    box-shadow: 0 0 -28px 3px var(--color-bg);
-  }
-  40% {
-    box-shadow: 0 0 15px 3px var(--color-bg);
-  }
-  60% {
-    box-shadow: 0 0 15px 3px var(--color-bg);
-  }
-  100% {
-    box-shadow: 0 0 -28px 3px var(--color-bg);
-  }
-}
-
-.stars {
-  animation: stars 1s ease-out 0s infinite normal forwards;
-}
 
 @media screen and (max-width: 1150px) {
   .app_wrapper {

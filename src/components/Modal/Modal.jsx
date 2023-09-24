@@ -1,12 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-//assets
-import pics1 from "../assets/successfully-done.png";
-import pics2 from "../assets/successful-man.png";
+//helpers
+import { images } from '../../constants';
 
 //style
 import "./Modal.css";
-import Button from "./Button";
 
 const Modal = () => {
   const navigate = useNavigate();
@@ -15,17 +13,16 @@ const Modal = () => {
     navigate("/");
   };
   return (
-    <div className="modal-backdrop">
-      <div className="modal">
-        <div className="modal-img">
-          <img src={pics1} alt="successfully done" className="modal-one" />
-          <img src={pics2} alt="sucessfull man" className="modal-two" />
+    <div className="app_modal-backdrop">
+      <div className="app_modal">
+        <div className="app_modal-img">
+          <img src={images.modalsuc} alt="successfully-done" />
         </div>
 
-        <h2>
+        <h2 className="app_modal-head">
           Congratulations <br /> you have successfully Registered!
         </h2>
-        <p>
+        <p className="p_montserrat-14">
           Yes, it was easy and you did it! <br /> check your mail box for next
           step😇
         </p>

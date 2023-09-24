@@ -20,9 +20,6 @@ const Footer = () => (
         <p className="p_montserrat-14 app_footer-links_logo-content_sub">
           <span>Terms of Use</span> Privacy Policy
         </p>
-        <Slide direction="up" delay={300}>
-          <div className="app__footer-links_icons">icons</div>
-        </Slide>
       </div>
       <div className="app__footer-links_contact">
         <Slide direction="up" delay={100}>
@@ -39,10 +36,11 @@ const Footer = () => (
           <p className="p_montserrat-14 contact">Register</p>
         </Slide>
         <div className="app_footer_follow">
-          
           <div className="app_footer_icons">
             <Slide direction="up" delay={600}>
-              <span className="p_montserrat-14" style={{color: '#d434fe'}}>Follow us: </span>
+              <span className="p_montserrat-14" style={{ color: "#d434fe" }}>
+                Follow us:{" "}
+              </span>
             </Slide>
             <Slide direction="left" delay={100}>
               <img src={images.instagram} alt="" />{" "}

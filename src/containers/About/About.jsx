@@ -7,7 +7,7 @@ import "./About.css";
 
 export default function About() {
   return (
-    <div className="app_about app_wrapper section_padding">
+    <div className="app_about app_wrapper section_padding" id="overview">
       <div className="app_wrapper_img">
         <div className="app_about-img_wrapper">
           <Bounce>

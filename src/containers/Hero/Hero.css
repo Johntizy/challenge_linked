@@ -245,6 +245,10 @@
     width: 115px;
   }
 
+  .app_hero-top p{
+    font-size: 16px;
+  }
+
   .app_hero-wrapper_info {
     display: flex;
     flex-direction: column;

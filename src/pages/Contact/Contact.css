@@ -1,0 +1,91 @@
+.form-label {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.app_contact_text p {
+  margin-top: 2rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+textarea {
+  border-radius: 4px;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 12px;
+  margin-top: 12px;
+  width: 100%;
+  font-family: var(--font-base);
+  margin-bottom: 20px;
+}
+
+.form-select {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select option {
+  width: 100%;
+}
+
+.hidden_form-text {
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
+  .app_register-form {
+    padding: 1rem;
+  }
+
+  .app_contact_text {
+    display: none;
+  }
+
+  .app_register-form h1.headtext {
+    font-size: 20px;
+  }
+
+  .hidden_form-text {
+    display: block;
+    text-align: left !important;
+  }
+}

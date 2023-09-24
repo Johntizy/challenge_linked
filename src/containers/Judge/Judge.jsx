@@ -14,7 +14,7 @@ export default function Judge() {
           </Bounce>
         </div>
       </div>
-      <div className="app_wrapper_info">
+      <div className="app_wrapper_info app_judge_content">
         <div className="app_judge-info_head">
           <Slide direction="up" delay={100}>
             <h1 className="headtext">

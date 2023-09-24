@@ -8,7 +8,7 @@ import { Bounce, Slide } from "react-awesome-reveal";
 
 export default function Faqs() {
   return (
-    <div className="app_judge app_wrapper_top section_padding">
+    <div className="app_judge app_wrapper_top section_padding" id="faqs">
       <div className="app_wrapper_info">
         <div className="app_judge-info_head">
           <Slide direction="up">

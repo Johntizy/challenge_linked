@@ -1,40 +1,37 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "react-query";
+import { Toaster } from "react-hot-toast";
 
 //Navbar
-import NavBar from "./layout/NavBar";
+import Navbar from "./layout/Navbar/Navbar";
+import Footer from "./layout/Footer/Footer";
 
 //pages
-import ContactPage from "./pages/Contact/ContactPage";
-import HomePage from "./pages/Home/Home";
+import Contact from "./pages/Contact/Contact";
+import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
-import Navbar from "./layout/Navbar/Navbar";
-
-import { QueryClientProvider, QueryClient } from "react-query";
 
 //style
 import "./App.css";
-import Footer from "./layout/Footer/Footer";
-import { Toaster } from "react-hot-toast";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-    <div className="app">
+      <div className="app">
+        <BrowserRouter>
+          <Navbar />
 
-      <BrowserRouter>
-        <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="register" element={<Register />} />
+          </Routes>
+          <Toaster />
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="register" element={<Register />} />
-        </Routes>
-        <Toaster />
-
-        <Footer />
-      </BrowserRouter>
-    </div>
+          <Footer />
+        </BrowserRouter>
+      </div>
     </QueryClientProvider>
   );
 }
