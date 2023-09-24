@@ -30,6 +30,7 @@ import phone from '../assets/phone.svg';
 import modalsuc from "../assets/modalsuc.svg";
 import regman from '../assets/regman.svg';
 import regfam from '../assets/regfam.svg';
+import loading from '../assets/loader.svg';
 
 export default {
     getlinked,
@@ -46,6 +47,7 @@ export default {
     chain,
     close,
     toggle,
+    loading,
     about,
     starpu,
     satagra,

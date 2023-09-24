@@ -41,6 +41,8 @@ function Contact() {
       ...formData,
       [event.target.name]: event.target.value,
     }));
+
+    console.log(formData);
   };
 
   const validateForm = () => {
@@ -179,8 +181,12 @@ function Contact() {
           </div>
 
           <Slide direction="up" delay={500}>
-            <button className="custom_button app_register-form-btn">
-              Register Now
+            <button className="app_register-form-btn" disabled={isLoading}>
+              {isLoading ? (
+                <img src={images.loading} className="spinner" />
+              ) : (
+                "Submit"
+              )}
             </button>
           </Slide>
         </form>

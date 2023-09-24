@@ -4,22 +4,17 @@ import { useMutation } from "react-query";
 import toast from "react-hot-toast";
 import { Slide } from "react-awesome-reveal";
 
-
 //component
 import Modal from "../../components/Modal/Modal";
 import { data } from "../../constants";
 import Input from "../../components/input/Input";
 import { images } from "../../constants";
-import { Selection } from "../../components/Selection/Selection";
-
 
 //style
 import "./Register.css";
 
 function Register() {
   const [selectOptions, setSelectOptions] = useState([]);
-  const [categoryPick, setCategoryPick] = useState(null);
-  const [groupSize, setGroupSize] = useState(null);
   const [showModal, setShowmodal] = useState(false);
 
   useEffect(() => {
@@ -32,11 +27,7 @@ function Register() {
     await axios
       .get("https://backend.getlinked.ai/hackathon/categories-list")
       .then((res) => {
-        let result = res.data;
-        result.map((user) => {
-          return arr.push({ value: user.name, label: user.name });
-        });
-        setSelectOptions(arr);
+        setSelectOptions(res.data);
       })
       .catch((err) => console.log(err));
   };
@@ -69,8 +60,6 @@ function Register() {
       setFormData(() => ({
         ...formData,
         [event.target.name]: event.target.checked,
-        category: categoryPick.value,
-        group_size: groupSize.value,
       }));
     } else {
       setFormData(() => ({
@@ -132,7 +121,8 @@ function Register() {
     let isValid = validateForm();
 
     if (isValid) {
-      toast(formData);
+      toast(formData.category);
+      mutate(formData);
     } else {
       toast("In-Valid Form");
     }
@@ -146,7 +136,9 @@ function Register() {
       <div className="app_wrapper_info">
         <form className="app_register-form" onSubmit={onSubmitHandler}>
           <Slide direction="up" delay={100}>
-            <h1 className="headtext">Register <img src={images.regfam} alt="" /></h1>
+            <h1 className="headtext">
+              Register <img src={images.regfam} alt="" />
+            </h1>
           </Slide>
 
           <Slide direction="up" delay={300}>
@@ -230,7 +222,7 @@ function Register() {
             <div className="app_register-form-input-container">
               <label className="p_montserrat-14">Category</label>
               <Slide direction="up" delay={300}>
-                {/* <select
+                <select
                   className="form-select"
                   name="category"
                   onChange={onChangeHandler}
@@ -242,14 +234,7 @@ function Register() {
                       {opt.name}
                     </option>
                   ))}
-                </select> */}
-
-                <Selection
-                  value={categoryPick}
-                  selectOptions={selectOptions}
-                  placeholder="Category"
-                  handleChange={setCategoryPick}
-                />
+                </select>
               </Slide>
               <span className="non-valid">{formError.occupation}</span>
             </div>
@@ -257,7 +242,7 @@ function Register() {
             <div className="app_register-form-input-container">
               <label className="p_montserrat-14">Group Size</label>
               <Slide direction="up" delay={300}>
-                {/* <select
+                <select
                   className="form-select"
                   name="group_size"
                   onChange={onChangeHandler}
@@ -269,13 +254,7 @@ function Register() {
                       {opt.value}
                     </option>
                   ))}
-                </select> */}
-                <Selection
-                  value={groupSize}
-                  selectOptions={data.groupSize}
-                  placeholder="Group Size"
-                  handleChange={setGroupSize}
-                />
+                </select>
               </Slide>
               <span className="non-valid">{formError.occupation}</span>
             </div>
@@ -297,7 +276,13 @@ function Register() {
           </div>
 
           <Slide direction="up" delay={500}>
-            <button className="app_register-form-btn">Register Now</button>
+            <button className="app_register-form-btn" disabled={isLoading}>
+              {isLoading ? (
+                <img src={images.loading} className="spinner" />
+              ) : (
+                "Register Now"
+              )}
+            </button>
           </Slide>
         </form>
       </div>

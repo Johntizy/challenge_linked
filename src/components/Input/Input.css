@@ -11,7 +11,11 @@
     font-family: var(--font-base);
   }
 
-  .custom_input input:focus{
-    border: 1.5px solid #fff;
+  input{
     color: #fff;
   }
+  input:focus {
+    border-color: var(--color-white);
+    color: #fff;
+  }
+  
