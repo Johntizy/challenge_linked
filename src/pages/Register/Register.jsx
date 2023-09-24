@@ -5,9 +5,6 @@ import toast from "react-hot-toast";
 import { Slide } from "react-awesome-reveal";
 
 
-//assets
-import photo from "../../assets/reg-image.png";
-
 //component
 import Modal from "../../components/Modal/Modal";
 import { data } from "../../constants";
@@ -144,12 +141,12 @@ function Register() {
   return (
     <div className="app_wrapper section_padding">
       <div className="app_wrapper_img">
-        <img src={photo} alt="reg photo" />
+        <img src={images.regman} alt="reg photo" />
       </div>
       <div className="app_wrapper_info">
         <form className="app_register-form" onSubmit={onSubmitHandler}>
           <Slide direction="up" delay={100}>
-            <h1 className="headtext">Register</h1>
+            <h1 className="headtext">Register <img src={images.regfam} alt="" /></h1>
           </Slide>
 
           <Slide direction="up" delay={300}>

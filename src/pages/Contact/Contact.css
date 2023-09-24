@@ -4,6 +4,9 @@
   font-weight: bold;
 }
 
+.app_contact_text h1{
+  font-size: 32px;
+}
 .app_contact_text p {
   margin-top: 2rem;
 }

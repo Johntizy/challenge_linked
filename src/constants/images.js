@@ -28,6 +28,8 @@ import instagram from '../assets/instagram.svg';
 import location from '../assets/location.svg';
 import phone from '../assets/phone.svg';
 import modalsuc from "../assets/modalsuc.svg";
+import regman from '../assets/regman.svg';
+import regfam from '../assets/regfam.svg';
 
 export default {
     getlinked,
@@ -39,6 +41,8 @@ export default {
     lens,
     man,
     fire,
+    regman,
+    regfam,
     chain,
     close,
     toggle,
