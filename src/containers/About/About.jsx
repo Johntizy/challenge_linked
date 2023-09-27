@@ -5,7 +5,7 @@ import { Bounce, Slide} from "react-awesome-reveal";
 
 import "./About.css";
 
-export default function About() {
+const About = () => {
   return (
     <div className="app_about app_wrapper section_padding" id="overview">
       <div className="app_wrapper_img">
@@ -44,3 +44,5 @@ export default function About() {
     </div>
   );
 }
+
+export default About;

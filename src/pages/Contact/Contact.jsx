@@ -12,7 +12,7 @@ import { images } from "../../constants";
 //style
 import "./Contact.css";
 
-function Contact() {
+const Contact = () => {
   const [showModal, setShowmodal] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -137,7 +137,7 @@ function Contact() {
 
           <div className="app_register-form-input">
             <div className="app_register-form-input-container">
-              <label className="p_montserrat-14">Team’s Name</label>
+              <label className="p_montserrat-14">First Name</label>
               <br />
               <Slide direction="up" delay={300}>
                 <Input
@@ -155,7 +155,7 @@ function Contact() {
 
           <div className="app_register-form-input">
             <div className="app_register-form-input-container">
-              <label className="p_montserrat-14">Project Topic</label>
+              <label className="p_montserrat-14">Email</label>
               <br />
               <Slide direction="up" delay={300}>
                 <Input
@@ -173,7 +173,7 @@ function Contact() {
 
           <div className="app_register-form-input">
             <div className="app_register-form-input-container">
-              <label className="p_montserrat-14">Project Topic</label>
+              <label className="p_montserrat-14">Message</label>
               <br />
               <Slide direction="up" delay={300}>
                 <textarea

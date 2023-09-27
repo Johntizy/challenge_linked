@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { images } from "../../constants";
-
-import "./Privacy.css";
 import { Bounce, Slide } from "react-awesome-reveal";
 
-export default function Privacy() {
+import "./Privacy.css";
+
+
+const Privacy = () => {
   return (
     <div className="app_privacy app_wrapper_top section_padding">
       <div className="app_wrapper_info">
@@ -31,7 +32,7 @@ export default function Privacy() {
         </Slide>
         <div className="app_privacy-content">
           <Slide direction="up" delay={800}>
-            <p className="p_montserrat-14 app_privacy-text">
+            <p className="p_montserrat-14 app_privacy-text" style={{textAlign: 'left'}}>
               At getlinked tech Hackathon 1.0, we value your privacy and are
               committed to protecting your personal information. This Privacy
               Policy outlines how we collect, use, disclose, and safeguard your
@@ -109,3 +110,5 @@ export default function Privacy() {
     </div>
   );
 }
+
+export default Privacy;

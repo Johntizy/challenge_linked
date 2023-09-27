@@ -7,13 +7,13 @@ import { useState } from "react";
 const Menu = ({ closeMenu }) => (
   <>
     <p onClick={closeMenu}>
-      <a href="/#timeline">Timeline</a>
+      <a className="navbar_link" href="/#timeline">Timeline</a>
     </p>
     <p onClick={closeMenu}>
-      <a href="/#overview">Overview</a>
+      <a className="navbar_link" href="/#overview">Overview</a>
     </p>
     <p onClick={closeMenu}>
-      <a href="/#faqs">FAQs</a>
+      <a className="navbar_link" href="/#faqs">FAQs</a>
     </p>
     <p className="navbar_link-contact" onClick={closeMenu}>
       <NavLink to="contact">Contacts</NavLink>

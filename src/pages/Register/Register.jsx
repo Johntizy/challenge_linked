@@ -13,7 +13,7 @@ import { images } from "../../constants";
 //style
 import "./Register.css";
 
-function Register() {
+const Register = () => {
   const [selectOptions, setSelectOptions] = useState([]);
   const [showModal, setShowmodal] = useState(false);
 

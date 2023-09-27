@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { Toaster } from "react-hot-toast";
@@ -14,8 +15,11 @@ import Register from "./pages/Register/Register";
 //style
 import "./App.css";
 
+
+
 const queryClient = new QueryClient();
-function App() {
+const App = () => {
+  
   return (
     <QueryClientProvider client={queryClient}>
       <div className="app">
@@ -34,6 +38,6 @@ function App() {
       </div>
     </QueryClientProvider>
   );
-}
+};
 
 export default App;

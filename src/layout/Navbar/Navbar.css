@@ -89,7 +89,7 @@
   border-radius: 4px;
 }
 
-.navbar_links_container .navbar_link-contact a.active, .navbar_menu_container .navbar_link-contact a.active{
+.navbar_links_container .navbar_link-contact a.active, .navbar_menu_container .navbar_link-contact a.active, a.navbar_link:hover{
   background: var(--gradient-bar);
   -webkit-text-fill-color: transparent;
   background-clip: text;

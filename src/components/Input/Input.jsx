@@ -2,7 +2,7 @@ import React from 'react';
 import Error from '../Errors/Error';
 import './Input.css';
 
-export default function Input({
+const Input = ({
     className,
     errors,
     disabled,
@@ -14,7 +14,7 @@ export default function Input({
     required,
     type,
     value
-  }){
+  }) => {
     const inputRef = React.useRef(null);
   
     const handleClick = () => {
@@ -44,3 +44,5 @@ export default function Input({
       </div>
     );
   };
+
+  export default Input;
