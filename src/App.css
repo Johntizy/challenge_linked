@@ -295,10 +295,10 @@ span {
 }
 
 .scale-up-center {
-  -webkit-animation: scale-up-center .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: scale-up-center .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-
 
 @media screen and (max-width: 1150px) {
   .app_wrapper {
@@ -345,10 +345,11 @@ span {
   .gradient_circle_section-bottom_right,
   .gradient_circle_section-bottom_left,
   .gradient_circle_section-bottom,
-  .gradient_circle_section-top_left{
+  .gradient_circle_section-top_left {
     filter: blur(120px);
   }
-  .gradient_circle_section-top_left, .gradient_circle_section-top_right{
+  .gradient_circle_section-top_left,
+  .gradient_circle_section-top_right {
     display: none;
   }
 }
