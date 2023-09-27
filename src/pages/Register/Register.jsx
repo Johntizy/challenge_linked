@@ -12,6 +12,7 @@ import { images } from "../../constants";
 
 //style
 import "./Register.css";
+import Error from "../../components/Errors/Error";
 
 const Register = () => {
   const [selectOptions, setSelectOptions] = useState([]);
@@ -85,19 +86,19 @@ const Register = () => {
     }
 
     if (project_topic === "") {
-      err.project_topic = "Occupation required!";
+      err.project_topic = "Project topic required!";
     }
     if (phone_number === "") {
-      err.phone_number = "Occupation required!";
+      err.phone_number = "Phone number required!";
     }
     if (category === "") {
-      err.category = "Gender required!";
+      err.category = "Please choose a category!";
     }
     if (group_size === "") {
-      err.group_size = "Gender required!";
+      err.group_size = "Please choose a group size";
     }
     if (privacy_poclicy_accepted === false) {
-      err.privacy_poclicy_accepted = "Any one language required!";
+      err.privacy_poclicy_accepted = "You need to accept our terms and condition";
     }
 
     setFormError({ ...err });
@@ -242,6 +243,7 @@ const Register = () => {
                     </option>
                   ))}
                 </select>
+                <Error>{formError.category}</Error>
               </Slide>
               <span className="non-valid">{formError.occupation}</span>
             </div>
@@ -262,6 +264,7 @@ const Register = () => {
                     </option>
                   ))}
                 </select>
+                <Error>{formError.group_size}</Error>
               </Slide>
               <span className="non-valid">{formError.occupation}</span>
             </div>
@@ -278,8 +281,9 @@ const Register = () => {
             <Slide direction="up" delay={300}>
               <label className="p_montserrat-14" htmlFor="terms">
                 I agreed with the event terms and conditions and privacy policy
-              </label>
+              </label> <Error>{formError.privacy_poclicy_accepted}</Error>
             </Slide>
+           
           </div>
 
           <Slide direction="up" delay={500}>

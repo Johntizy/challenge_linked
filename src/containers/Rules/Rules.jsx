@@ -4,7 +4,7 @@ import { Bounce, Slide } from "react-awesome-reveal";
 
 import "./Rules.css";
 
-export default function Rules() {
+const Rules = () => {
   return (
     <div className="app_rules app_wrapper section_padding">
       <div className="app_wrapper_info">
@@ -50,3 +50,5 @@ export default function Rules() {
     </div>
   );
 }
+
+export default Rules;

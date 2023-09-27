@@ -4,7 +4,7 @@ import { images } from "../../constants";
 import "./Hero.css";
 import { Slide } from "react-awesome-reveal";
 
-export default function Hero() {
+const Hero = () => {
   return (
     <div className="app_hero">
       <div className="app_hero-top">
@@ -66,3 +66,5 @@ export default function Hero() {
     </div>
   );
 }
+
+export default Hero;

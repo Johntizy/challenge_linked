@@ -6,7 +6,7 @@ import { images, data } from "../../constants";
 import "./Faqs.css";
 import { Bounce, Slide } from "react-awesome-reveal";
 
-export default function Faqs() {
+const Faqs = () => {
   return (
     <div className="app_judge app_wrapper_top section_padding" id="faqs">
       <div className="app_wrapper_info">
@@ -33,3 +33,5 @@ export default function Faqs() {
     </div>
   );
 }
+
+export default Faqs;

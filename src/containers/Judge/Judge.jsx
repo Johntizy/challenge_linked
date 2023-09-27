@@ -4,7 +4,7 @@ import { Bounce, Slide } from "react-awesome-reveal";
 
 import "./Judge.css";
 
-export default function Judge() {
+const Judge = () => {
   return (
     <div className="app_judge app_wrapper section_padding">
       <div className="app_wrapper_img">
@@ -81,3 +81,5 @@ export default function Judge() {
     </div>
   );
 }
+
+export default Judge;

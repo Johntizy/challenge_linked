@@ -7,7 +7,7 @@ import { data , images} from '../../constants';
 
 
 
-export default function Timeline() {
+const Timeline = () => {
   return (
     <div className='section_padding' id='timeline'>
         <div className="app_timeline-title">
@@ -44,3 +44,5 @@ export default function Timeline() {
     </div>
   )
 }
+
+export default Timeline;

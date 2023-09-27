@@ -199,7 +199,13 @@
     position: relative;
     bottom: initial;
     right: initial;
+
   }
+  .app_hero-wrapper_img img {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
 
   .app_hero-wrapper_img img {
     width: 100%;
